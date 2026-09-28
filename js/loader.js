@@ -1,3 +1,4 @@
+var ICE_DODO_LOADER_BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*\/[^/]*$/, "")) || "https://raw.esm.sh/gh/1ts-Alec/ice-dodo@60a66beea9d2a1aacb6ca48384112029cd52cebd/";
 var loader = {
 	init: function () {
 		return new Promise(resolve => {
@@ -22,7 +23,7 @@ var loader = {
         var head = document.getElementsByTagName('head')[0];
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = url.startsWith("http") ? url : "https://cdn.jsdelivr.net/gh/genizy/ice-dodo/"+url;
+        script.src = url.startsWith("http") ? url : ICE_DODO_LOADER_BASE+url;
         script.onreadystatechange = callback;
         script.onload = callback;
         head.appendChild(script);
